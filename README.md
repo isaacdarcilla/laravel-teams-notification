@@ -27,7 +27,7 @@ return [
     | Webhook URL
     |--------------------------------------------------------------------------
     |
-    | The webhook URl where we post a request
+    | The webhook URL where we post a request
     | You can generate test webhook URL in https://typedwebhook.tools/ 
     | or through MS Teams Incoming WebHook
     |
@@ -36,7 +36,8 @@ return [
 ];
 ```
 
-Then, you can add `WEBHOOK_URL` in your `.env` file.
+Then, you can add `WEBHOOK_URL` in your `.env` file. More information about how to setup webhook in MS teams in
+this [link](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=dotnet).
 
 #### Usage
 
@@ -58,7 +59,13 @@ TeamsNotification::create()
 ```
 
 Optionally, you can use `OrderStatusEvent::class` and `OrderNotificationListener::class` to dispatch order status to MS
-Teams notifications.
+Teams notifications, of course we can also add more events.
+
+
+#### Sample Output
+
+![image](https://user-images.githubusercontent.com/22732118/229997903-cac75a28-5414-4b55-a8b9-735c748f81f7.png)
+![image](https://user-images.githubusercontent.com/22732118/229997658-b03c082a-4896-45c1-b26d-23295a013319.png)
 
 #### Testing
 
