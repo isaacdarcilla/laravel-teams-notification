@@ -28,18 +28,20 @@ return [
     |--------------------------------------------------------------------------
     |
     | The webhook URl where we post a request
-    | You can generate test hook in https://typedwebhook.tools/
+    | You can generate test webhook URL in https://typedwebhook.tools/ 
+    | or through MS Teams Incoming WebHook
     |
     */
     'webhook_url' => env('WEBHOOK_URL'),
 ];
 ```
 
+Then, you can add `WEBHOOK_URL` in your `.env` file.
+
 #### Usage
 
 ```php
-$teamsNotification = new TeamsNotification\TeamsNotification();
-echo $teamsNotification->echoPhrase('Hello, TeamsNotification!');
+$notification = new TeamsNotification();
 ```
 
 #### Testing
