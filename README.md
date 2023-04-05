@@ -32,7 +32,7 @@ return [
     | or through MS Teams Incoming WebHook
     |
     */
-    'webhook_url' => env('WEBHOOK_URL'),
+    'webhook_url' => env('WEBHOOK_URL', 'your_webhook_url'),
 ];
 ```
 
@@ -41,8 +41,24 @@ Then, you can add `WEBHOOK_URL` in your `.env` file.
 #### Usage
 
 ```php
-$notification = new TeamsNotification();
+TeamsNotification::create()
+    ->webHookUrl('your_webhook_url')
+    ->payload([
+        'type' => 'MessageCard',
+        'context' => 'https://schema.org/extensions',
+        'themeColor' => '0076D7',
+        'summary' => 'Hello, World',
+        'sections' => [
+            [
+                'activityTitle' => 'Hello, World!',
+            ]
+        ]
+    ])
+    ->dispatch();
 ```
+
+Optionally, you can use `OrderStatusEvent::class` and `OrderNotificationListener::class` to dispatch order status to MS
+Teams notifications.
 
 #### Testing
 

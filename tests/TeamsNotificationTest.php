@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Event;
 use TeamsNotification\TeamsNotification\Events\OrderStatusEvent;
+use TeamsNotification\TeamsNotification\TeamsNotification;
 
 it('can dispatch the event', function () {
     Event::fake();
@@ -17,4 +18,23 @@ it('can dispatch the event', function () {
             $event->new_status === $new_status &&
             $event->timestamp === $timestamp;
     });
+});
+
+it('can send notification using fluent api', function () {
+    $notification = TeamsNotification::create()
+        ->webHookUrl()
+        ->payload([
+            'type' => 'MessageCard',
+            'context' => 'https://schema.org/extensions',
+            'themeColor' => '0076D7',
+            'summary' => 'Hello, World',
+            'sections' => [
+                [
+                    'activityTitle' => 'Hello, World!',
+                ]
+            ]
+        ])
+        ->dispatch();
+
+    expect($notification)->toEqual(1);
 });
