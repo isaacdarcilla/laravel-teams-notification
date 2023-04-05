@@ -1,5 +1,5 @@
 {
-    "name": "notification/laravel-teams-notification",
+    "name": "laravel-teams-notification/laravel-teams-notification",
     "description": "A Laravel package that integrates Microsoft Teams notification.",
     "keywords": [
         "Notification",

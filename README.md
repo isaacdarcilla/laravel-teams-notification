@@ -9,7 +9,7 @@
 You can install the package via composer:
 
 ```bash
-composer require notification/laravel-teams-notification
+composer require laravel-teams-notification/laravel-teams-notification
 ```
 
 You can publish the config file with:
