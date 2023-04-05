@@ -1,8 +1,8 @@
 # A simple Laravel package that integrates Microsoft Teams notification.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/notification/laravel-teams-notification.svg?style=flat-square)](https://packagist.org/packages/notification/laravel-teams-notification)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/notification/laravel-teams-notification/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/notification/laravel-teams-notification/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/notification/laravel-teams-notification.svg?style=flat-square)](https://packagist.org/packages/notification/laravel-teams-notification)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/isaacdarcilla/laravel-teams-notification.svg?style=flat-square)](https://packagist.org/packages/isaacdarcilla/laravel-teams-notification)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/isaacdarcilla/laravel-teams-notification/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/isaacdarcilla/laravel-teams-notification/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/isaacdarcilla/laravel-teams-notification.svg?style=flat-square)](https://packagist.org/packages/isaacdarcilla/laravel-teams-notification)
 
 #### Installation
 
