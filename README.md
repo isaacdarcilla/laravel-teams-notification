@@ -1,4 +1,4 @@
-# A simple Laravel package that integrates Microsoft Teams notification.
+## A simple Laravel package that integrates Microsoft Teams webhook.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/laravel-teams-notification/laravel-teams-notification.svg?style=flat-square)](https://packagist.org/packages/laravel-teams-notification/laravel-teams-notification)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/isaacdarcilla/laravel-teams-notification/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/isaacdarcilla/laravel-teams-notification/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -61,11 +61,17 @@ TeamsNotification::create()
 Optionally, you can use `OrderStatusEvent::class` and `OrderNotificationListener::class` to dispatch order status to MS
 Teams notifications, of course we can also add more events.
 
+```php
+$order_uuid = '123456';
+$new_status = 'shipped';
+$timestamp = '2023-04-05 01:36:20';
 
-#### Sample Output
+event(new OrderStatusEvent($order_uuid, $new_status, $timestamp));
+```
 
-![image](https://user-images.githubusercontent.com/22732118/229997903-cac75a28-5414-4b55-a8b9-735c748f81f7.png)
-![image](https://user-images.githubusercontent.com/22732118/229997658-b03c082a-4896-45c1-b26d-23295a013319.png)
+#### Screenshot
+
+More samples and screenshot of how the message should look can be found in `screenshots` folder.
 
 #### Testing
 

@@ -3,14 +3,12 @@
 namespace TeamsNotification\TeamsNotification\Listeners;
 
 use TeamsNotification\TeamsNotification\Events\OrderStatusEvent;
+use TeamsNotification\TeamsNotification\TeamsNotification;
 
 class OrderNotificationListener
 {
     /**
      * Handle the event.
-     *
-     * @param  OrderStatusEvent  $event
-     * @return false|string
      */
     public function handle(OrderStatusEvent $event): false|string
     {
@@ -37,14 +35,9 @@ class OrderNotificationListener
             ],
         ];
 
-        $options = [
-            "http" => [
-                "header" => "Content-Type: application/json",
-                "method" => "POST",
-                "content" => json_encode($card)
-            ]
-        ];
-        $context = stream_context_create($options);
-        return file_get_contents(config('teams-notification.webhook_url'), false, $context);
+        return TeamsNotification::create()
+            ->webHookUrl()
+            ->payload($card)
+            ->dispatch();
     }
 }

@@ -12,7 +12,7 @@ class TeamsNotification
 
     public static function create(): static
     {
-        return (new static ());
+        return new static ();
     }
 
     public function __construct()
@@ -22,7 +22,6 @@ class TeamsNotification
     /**
      * Webhook URL to make request
      *
-     * @param  string|null  $url
      * @return $this
      */
     public function webHookUrl(string $url = null): TeamsNotification
@@ -35,7 +34,6 @@ class TeamsNotification
     /**
      * The card design of the message to be sent in MS Teams.
      *
-     * @param  array  $payload
      * @return $this
      */
     public function payload(array $payload): self
@@ -43,11 +41,11 @@ class TeamsNotification
         $this->payload = $payload;
 
         $options = [
-            "http" => [
-                "header" => "Content-Type: application/json",
-                "method" => "POST",
-                "content" => json_encode($payload)
-            ]
+            'http' => [
+                'header' => 'Content-Type: application/json',
+                'method' => 'POST',
+                'content' => json_encode($payload),
+            ],
         ];
 
         $this->context = stream_context_create($options);
@@ -57,8 +55,6 @@ class TeamsNotification
 
     /**
      * Send the request to webhook
-     *
-     * @return false|string
      */
     public function dispatch(): false|string
     {

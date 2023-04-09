@@ -31,8 +31,8 @@ it('can send notification using fluent api', function () {
             'sections' => [
                 [
                     'activityTitle' => 'Hello, World!',
-                ]
-            ]
+                ],
+            ],
         ])
         ->dispatch();
 
