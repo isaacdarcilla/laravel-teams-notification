@@ -58,17 +58,6 @@ TeamsNotification::create()
     ->dispatch();
 ```
 
-Optionally, you can use `OrderStatusEvent::class` and `OrderNotificationListener::class` to dispatch order status to MS
-Teams notifications, of course we can also add more events.
-
-```php
-$order_uuid = '123456';
-$new_status = 'shipped';
-$timestamp = '2023-04-05 01:36:20';
-
-event(new OrderStatusEvent($order_uuid, $new_status, $timestamp));
-```
-
 #### Screenshot
 
 More samples and screenshot of how the message should look can be found in `screenshots` folder.
